@@ -1,0 +1,3 @@
+import Link from "next/link";
+import {lessons} from "@/lib/content";
+export default function Learn(){return <section className="page"><div className="eyebrow">MICRO LEARNING LIBRARY</div><h1 className="pageTitle">Mikro öğrenme</h1><p className="lead">Bir konu seç. 20 dakikadan kısa sürede temel prensipleri öğren, ardından kendini test et.</p><div className="cards">{lessons.map(l=><Link className="card" href={`/learn/${l.slug}`} key={l.slug}><span className="pill">{l.category}</span><h3>{l.title}</h3><p>{l.summary}</p><div className="cardFoot">{l.minutes} dk · {l.level}<b>Oku →</b></div></Link>)}</div></section>}
